@@ -15,7 +15,8 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased !important;
-    background: #E6E8F1;
+    background: rgba(230, 232, 241, 0.6);
+    overflow: hidden;
   }
 
   button {
