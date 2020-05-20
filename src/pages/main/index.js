@@ -5,8 +5,7 @@ import { Container,
   Aside, 
   Content, 
   List, 
-  ImgContainer, 
-  Circle} from './styles';
+  ImgContainer} from './styles';
 
 import Foto1 from '../../assets/img1.jpg';
 import Foto2 from '../../assets/img2.jpg';
@@ -86,10 +85,9 @@ export default class Main extends Component {
           </List>
         </Aside>
         <Content>
-          <Circle />
           <ImgContainer>
-              <img src={this.state.currentPhoto}/>
-          </ImgContainer>
+            <img src={this.state.currentPhoto}/>
+          </ImgContainer> 
         </Content>
       </Container>
     );

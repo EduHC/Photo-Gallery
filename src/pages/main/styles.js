@@ -1,55 +1,31 @@
 import styled, { keyframes } from 'styled-components';
 import background from '../../assets/backImage.jpg';
-
-const circle = keyframes`
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
-const curve = keyframes`
-  0%
-`;
+import texture from '../../assets/texture2.jpg';
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 6fr;
   grid-template-rows: 10vh 90vh;
-  grid-template-areas: "header header"
+  grid-template-areas: "header content"
                        "aside content"
                        "aside content"; 
 `;
 
 export const Header = styled.div`
   grid-area: header;
-  height: 50px;
+  height: 100%;
 
-  background: rgba(230, 232, 241, 0.3);
+  background: rgba(230, 232, 241, 0.05);
   
   display: flex;
   justify-content: center;
   align-itens: center;
 
-  border-bottom-left-radius: 70%;
-  border-bottom-right-radius: 70%;
-
-  box-shadow: 3px 3px 15px rgba(79, 18, 63, 0.1);
+  box-shadow: 3px -5px 6px rgba(79,18,63,0.3);
 
   img {
-    height: 100px;
-    width: 300px;
-    background: transparent;
-   
-    border-radius: 20%;
-
-    box-shadow: 2px 10px 16px rgba(79, 18, 63, 0.05),
-                -2px 10px 16px rgba(79, 18, 63, 0.05);
+    width: 90%;
+    height: 90%;
   }
 `;
 
@@ -57,14 +33,10 @@ export const Aside = styled.div`
   grid-area: aside;
   
   height: 100%;
-  
   background: rgba(230, 232, 241, 0.01);
   
   display: flex;
   flex-direction: column;
-  
-  padding-top: 10px;
-  border-radius: 10px;
 
   box-shadow: 2px 15px 6px rgba(79,18,63,0.3);
 
@@ -79,9 +51,10 @@ export const Aside = styled.div`
     margin-bottom: 20px;
  
     text {
-      color: #3D062B;
-      font-size: 48px;
-      text-shadow: 3px 3px 5px #73276B;
+      padding-top: 6px;
+      color: #611C54;
+      font-size: 38px;
+      text-shadow: 2px 2px 3px #73276B;
       letter-spacing: 6px;
     }
   }
@@ -91,7 +64,7 @@ export const List = styled.ul`
   max-height: 530px;
   list-style: none;
   
-  padding-top: 20px;
+  padding-top: 5px;
   border-radius: 10px;
   
   overflow: auto;
@@ -107,16 +80,16 @@ export const List = styled.ul`
   }
 
   li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     Button {
       background: transparent;
       
-      height: 3.0rem;
+      height: 2.0rem;
       width: 85%;
       
-      font: 30px 'Poiret One','Fredericka the Great', cursive;
-      color: #73276B;
+      font: 20px 'Poiret One','Fredericka the Great', cursive;
+      color: #000;
   
       border-style: none;
       border-bottom: 1px solid #611C54;
@@ -132,8 +105,8 @@ export const List = styled.ul`
         height: 3.2rem;
         width: 90%;
   
-        background: #73276B;
-        color: #E6E8F1;
+        background: #0AB467;
+        color: #FFFFFF;
   
         margin-left: 7px;
       }
@@ -143,26 +116,29 @@ export const List = styled.ul`
 
 export const Content = styled.div`
   grid-area: content;
-  padding: 20px;
+  padding: 10px;
   
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: url(${texture}) no-repeat;
+  background-size: cover;
 `;
 
 export const ImgContainer = styled.div`
   width: 80%;
   height: 80%;
-  max-height: 580px;
-  max-width: 1000px;
+  max-height: 500px;
+  max-width: 800px;
 
   background-image: url(${background});
-  background-position: left;
-
+  background-position: top;
+  
   box-shadow: 8px 8px 10px rgba(0,0,0, 0.15),
               0px -3px 10px rgba(0,0,0, 0.15);
 
-  border-radius: 2%;
+  border-radius: 5px;
 
   img {
     width: 100%;
@@ -174,22 +150,7 @@ export const ImgContainer = styled.div`
     transition: 0.8s;
 
     &:hover {
-      transform: rotate(-6deg);
+      transform: rotate(-8deg);
     }
   }
-`;
-
-export const Circle = styled.ul`
-  height: 50px;
-  width: 50px;
-
-  list-style: none;
-  border-radius: 50%;
- 
-  background: black;
-  background: radial-gradient(circle at 20px 14px, transparent, #73276B);
-
-  display: block;
-  position: absolute;
-  bottom: -50px;
 `;
