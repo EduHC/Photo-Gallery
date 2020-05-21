@@ -114,7 +114,7 @@ text-align: center;
 transition: 0.4s;
 
 &:hover {
-  height: 3.2rem;
+  height: 2.7rem;
   width: 90%;
 
   background: #0AB467;
@@ -123,7 +123,8 @@ transition: 0.4s;
   margin-left: 7px;
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.9;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   }
 `;
 
