@@ -5,7 +5,8 @@ import { Container,
   Aside, 
   Content, 
   List, 
-  ImgContainer} from './styles';
+  ImgContainer,
+  Button} from './styles';
 
 import Foto1 from '../../assets/img1.jpg';
 import Foto2 from '../../assets/img2.jpg';
@@ -17,6 +18,10 @@ import Foto7 from '../../assets/img7.jpg';
 import Foto8 from '../../assets/img8.jpg';
 import Foto9 from '../../assets/img9.jpg';
 import Foto10 from '../../assets/img10.jpg';
+import Foto11 from '../../assets/img11.jpg';
+import Foto12 from '../../assets/img12.png';
+import Foto13 from '../../assets/img13.jpg';
+import Foto14 from '../../assets/img14.jpg';
 import logo from '../../assets/logo.svg';
 
 const photos = [
@@ -29,7 +34,11 @@ const photos = [
   Foto7, 
   Foto8, 
   Foto9, 
-  Foto10];
+  Foto10,
+  Foto11,
+  Foto12,
+  Foto13,
+  Foto14];
 
 export default class Main extends Component {
   state = {
@@ -75,11 +84,11 @@ export default class Main extends Component {
           <List>
             {photos.map(item => 
               <li key={item}>
-                <button
+                <Button
                   onClick={() => this.handleSubmit(item)}
                 >
                   Foto {photos.indexOf(item) + 1}
-                </button>
+                </Button>
               </li>
             )}
           </List>

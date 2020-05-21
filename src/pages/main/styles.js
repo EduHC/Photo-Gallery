@@ -1,6 +1,14 @@
 import styled, { keyframes } from 'styled-components';
-import background from '../../assets/backImage.jpg';
 import texture from '../../assets/texture2.jpg';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
   display: grid;
@@ -21,6 +29,7 @@ export const Header = styled.div`
   justify-content: center;
   align-itens: center;
 
+  border-right: 3px solid #E6E8F1;
   box-shadow: 3px -5px 6px rgba(79,18,63,0.3);
 
   img {
@@ -34,11 +43,11 @@ export const Aside = styled.div`
   
   height: 100%;
   background: rgba(230, 232, 241, 0.01);
+
+  border-right: 3px solid #E6E8F1;
   
   display: flex;
   flex-direction: column;
-
-  box-shadow: 2px 15px 6px rgba(79,18,63,0.3);
 
   div {
     height: 40px;
@@ -65,12 +74,12 @@ export const List = styled.ul`
   list-style: none;
   
   padding-top: 5px;
-  border-radius: 10px;
-  
+  border-bottom: 1px solid #E6E8F1;
+
   overflow: auto;
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
     border-radius: 10px;
   }
 
@@ -80,37 +89,41 @@ export const List = styled.ul`
   }
 
   li {
-    margin-bottom: 10px;
-
-    Button {
-      background: transparent;
-      
-      height: 2.0rem;
-      width: 85%;
-      
-      font: 20px 'Poiret One','Fredericka the Great', cursive;
-      color: #000;
-  
-      border-style: none;
-      border-bottom: 1px solid #611C54;
-      border-top: 1px solid #611C54;
-      border-radius: 3px;
-      margin-left: 10px;
-
-      text-align: center;
-      
-      transition: 0.4s;
-
-      &:hover {
-        height: 3.2rem;
-        width: 90%;
-  
-        background: #0AB467;
-        color: #FFFFFF;
-  
-        margin-left: 7px;
-      }
+    margin-bottom: 12px;
     }
+  }
+`;
+
+export const Button = styled.button`
+background: transparent;
+      
+height: 2.0rem;
+width: 85%;
+
+font: 20px 'Poiret One','Fredericka the Great', cursive;
+color: #000;
+
+border-style: none;
+border-bottom: 1px solid #611C54;
+border-top: 1px solid #611C54;
+border-radius: 3px;
+margin-left: 10px;
+
+text-align: center;
+
+transition: 0.4s;
+
+&:hover {
+  height: 3.2rem;
+  width: 90%;
+
+  background: #0AB467;
+  color: #FFFFFF;
+
+  margin-left: 7px;
+
+  &:active {
+    opacity: 0.5;
   }
 `;
 
@@ -132,7 +145,11 @@ export const ImgContainer = styled.div`
   max-height: 500px;
   max-width: 800px;
 
-  background-image: url(${background});
+  display: flex;
+  justify-content: center;
+  align-itens: center;
+
+  background: transparet;
   background-position: top;
   
   box-shadow: 8px 8px 10px rgba(0,0,0, 0.15),
@@ -141,11 +158,11 @@ export const ImgContainer = styled.div`
   border-radius: 5px;
 
   img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 
-    box-shadow: 8px 8px 10px rgba(0,0,0, 0.6),
-                -3px -3px 10px rgba(0,0,0, 0.6);
+    box-shadow: 8px 8px 10px rgba(0,0,0, 0.3),
+                -3px -3px 10px rgba(0,0,0, 0.3);
 
     transition: 0.8s;
 
